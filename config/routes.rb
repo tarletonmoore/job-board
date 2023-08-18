@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   get "/signup" => "users#new"
   post "/users" => "users#create"
+
+  get "/jobs" => "jobs#index"
 end
