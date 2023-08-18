@@ -1,0 +1,6 @@
+<h1>All Companies</h1>
+<% @companies.each do |company| %>
+  <h2><%= company.name %></h2>
+  <img src="<%= company.logo %>" alt="logo" width="200" height="200">
+  <p>Description: <%= company.description %></p>
+<% end %>
