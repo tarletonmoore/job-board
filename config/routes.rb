@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get "/companies" => "companies#index"
   get "/companies/:id" => "companies#show"
-  get "/jobs/:id" => "jobs#show"
-  get "/jobs" => "jobs#index"
+  # get "/jobs/:id" => "jobs#show"
+  # get "/jobs" => "jobs#index"
+  resources :jobs
 end
