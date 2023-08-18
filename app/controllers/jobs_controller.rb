@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
-  def index
-    @jobs = Job.where(active: true)
-    render :index
+  def show
+    @job = Job.find_by(id: params[:id])
+    render :show
   end
 end
