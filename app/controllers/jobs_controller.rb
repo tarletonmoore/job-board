@@ -8,5 +8,4 @@ class JobsController < ApplicationController
     @jobs = Job.where(active: true)
     render :index
   end
-
 end
