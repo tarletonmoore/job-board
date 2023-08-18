@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
 
   get "/jobs/:id" => "jobs#show"
+  get "/jobs" => "jobs#index"
 end
