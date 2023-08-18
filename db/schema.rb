@@ -14,6 +14,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_185529) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "logo"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.integer "company_id"
     t.string "title"
@@ -26,14 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_185529) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.string "logo"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -41,4 +41,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_185529) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 end
