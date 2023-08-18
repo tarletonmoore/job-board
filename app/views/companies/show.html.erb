@@ -1,0 +1,15 @@
+<h1>Company info</h1>
+<h2><%= @company.name %></h2>
+<img src="<%= @company.logo %>" alt="logo" width="200" height="200">
+<p>Description: <%= @company.description %></p>
+<% @company.jobs.where(active: true).each do |job| %>
+<h2><%= job.title %></h2>
+
+<p><%= job.description %></p>
+<p> <%= job.url %> </p>
+<p><%= job.location %></p>
+<p><%= job.salary_range %></p>
+
+<% end %>
+<br>
+<a href="/companies">Back to all companies</a>
