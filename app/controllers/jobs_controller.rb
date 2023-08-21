@@ -21,7 +21,7 @@ class JobsController < ApplicationController
   def create
     if current_user.admin
       @job = Job.new(
-        company_id: params[:job][:company_id],
+        company_id: Company.find_by(name: params[:job][:company_id]).id,
         title: params[:job][:title],
         description: params[:job][:description],
         url: params[:job][:url],
