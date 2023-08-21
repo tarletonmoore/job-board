@@ -1,0 +1,2 @@
+module LikedJobsHelper
+end

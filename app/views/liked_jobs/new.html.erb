@@ -1,0 +1,30 @@
+<%= form_with model: @liked_job do |form| %>
+ <!-- <div>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+    <%@liked_job.errors.full_messages_for(:user_id).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div> 
+  
+  <div>
+    <%= form.label :job_id %>
+    <%= form.text_field :job_id %>
+    <%@liked_job.errors.full_messages_for(:job_id).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+  </div>
+  <div>
+    <%= form.label :is_liked %>
+    <%= form.text_field :is_liked %>
+    <%@liked_job.errors.full_messages_for(:is_liked).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div>
+  -->
+  <div>
+   <%= form.submit %> 
+  </div>
+<% end%>

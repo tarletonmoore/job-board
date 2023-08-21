@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   # get "/jobs/:id" => "jobs#show"
   # get "/jobs" => "jobs#index"
   resources :jobs
+  # resources :liked_jobs
+  post "liked_jobs" => "liked_jobs#create"
+  delete "liked_jobs/:id" => "liked_jobs#destroy"
 end
