@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "jobs#index"
   get "/login" => "sessions#new"
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # get "/companies" => "companies#index"
   # get "/companies/:id" => "companies#show"
-resources :companies
+  resources :companies
   # get "/jobs/:id" => "jobs#show"
   # get "/jobs" => "jobs#index"
   resources :jobs
