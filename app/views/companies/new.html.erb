@@ -1,0 +1,32 @@
+<h1>New Company</h1>
+<%= form_with model: @company do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%@company.errors.full_messages_for(:name).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div> 
+  
+  <div>
+    <%= form.label :logo %>
+    <%= form.text_field :logo %>
+    <%@company.errors.full_messages_for(:logo).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+    <%@company.errors.full_messages_for(:description).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end%>
+<a href= "/jobs">Back to all jobs</a>
