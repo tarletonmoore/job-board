@@ -1,0 +1,61 @@
+<h1>New Job</h1>
+<%= form_with model: @job do |form| %>
+  <!--<div>
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id %>
+    <%@job.errors.full_messages_for(:company_id).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div> -->
+  <div>
+    <%= form.label :company_id %>
+    <%= form.select :company_id, options_for_select(Company.all.map {|company| company.name}) %>
+    <%@job.errors.full_messages_for(:company_id).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%@job.errors.full_messages_for(:title).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+    <%@job.errors.full_messages_for(:description).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div>
+  <div>
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+    <%@job.errors.full_messages_for(:url).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div>
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+    <%@job.errors.full_messages_for(:location).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div>
+  <div>
+    <%= form.label :salary_range %>
+    <%= form.text_field :salary_range %>
+    <%@job.errors.full_messages_for(:salary_range).each do |message|%>
+      <div><%= message %></div>
+    <%end%>
+
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end%>
