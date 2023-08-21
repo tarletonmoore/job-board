@@ -39,6 +39,22 @@
       <p>Location: <%= job.location %></p>
       <p>Website: <%= job.url %></p>
       <p>Salary range: <%= job.salary_range %></p>
+      <%if current_user.liked_jobs.find_by(job_id: job.id) && current_user.liked_jobs.find_by(job_id: job.id).is_liked == true %>
+<form method="delete" action="/liked_jobs/<%=current_user.liked_jobs.find_by(job_id: job.id).id%>" class="inline">
+
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">
+Unlike
+  </button>
+</form>
+<%else%>
+<form method="post" action="/liked_jobs" class="inline">
+  <input type="hidden" name="job_id" value=<%=job.id %> >
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">
+Like
+  </button>
+</form>
+
+<% end %>
       <% end %>
     </div>
   </div>
