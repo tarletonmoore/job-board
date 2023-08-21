@@ -1,9 +1,50 @@
-<h1>Job info</h1>
 
-<h1><%= @job.title %></h1>
-<p>description: <%= @job.description %></p>
-<p>Company: <%= @job.company.name%> </p>
-<p>url: <%= @job.url %></p>
-<p>location: <%= @job.location %></p>
-<p>salary_range: <%= @job.salary_range %></p>
-<a href="/jobs">Back to all jobs</a>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <%= stylesheet_link_tag "style" %> 
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <span class="company">JOT</span>
+        <span>Job</span>
+      </div>
+      <div class="col-8">
+        <span><a href="/login">Log in</a></span>
+        <span><a href="/signup">Sign up</a></span>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="container">
+    <div class="job">
+      <title> info</title>
+      <span><%= @job.title %></span>
+      <span class="num">#<%= @job.id %></span>
+    </div>
+    <br>
+    <p>description: <%= @job.description %></p>
+    <p>Company: <%= @job.company.name%> </p>
+    <p>url: <%= @job.url %></p>
+    <p>location: <%= @job.location %></p>
+    <p>salary_range: <%= @job.salary_range %></p>
+    <p><a href="/jobs">Back to all jobs</a></p>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

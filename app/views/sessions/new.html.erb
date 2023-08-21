@@ -1,14 +1,44 @@
-<h1>Login</h1>
-<%= form_with method: "post", url: "/sessions" do |form| %>
-  <div>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <%= stylesheet_link_tag "style" %> 
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <span class="company">JOT</span>
+        <span>Log in</span>
+      </div>
+      <div class="col-8">
+        <span><a href="/jobs">Jobs</a></span>
+        <span><a href="/signup">Sign up</a></span>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="container">
+    <h1>Login</h1>
+    <%= form_with method: "post", url: "/sessions" do |form| %>
     <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  <div>
+    <div>
+      <%= form.email_field :email %>
+    </div>
     <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
+    <div>
+      <%= form.password_field :password %>
+    </div>
+    <div>
+      <br>
     <%= form.submit "Submit" %>
   </div>
 <% end%>
