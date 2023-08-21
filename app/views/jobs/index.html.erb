@@ -1,10 +1,52 @@
-<h1>All open jobs</h1>
-<% @jobs.each do |job| %>
-  <h2><%= job.title %></h2>
-  <p>Company: <%= job.company.name %></p>
-  <p>Description: <%= job.description %></p>
-  <p>Location: <%= job.location %></p>
-  <p>Website: <%= job.url %></p>
-  <p>Salary range: <%= job.salary_range %></p>
+<!doctype html>
+<html lang="en">
 
-<% end %>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <%= stylesheet_link_tag "style" %> 
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <span class="company">JOT</span>
+        <span>Open Jobs</span>
+      </div>
+      <div class="col-3">
+        <span><span class="logo">JO</span>bs in <span class="logo">T</span>ech</span>
+      </div>
+      <div class="col-5">
+        <span><a href="/login">Log in</a></span>
+        <span><a href="/signup">Sign up</a></span>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <div class="container">
+    <div class="list">
+      <% @jobs.each do |job| %>
+      <h2><a href="/jobs/<%= job.id %>"><%= job.title %></a></h2>
+      <p>Company: <%= job.company.name %></p>
+      <p>Description: <%= job.description %></p>
+      <p>Location: <%= job.location %></p>
+      <p>Website: <%= job.url %></p>
+      <p>Salary range: <%= job.salary_range %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+

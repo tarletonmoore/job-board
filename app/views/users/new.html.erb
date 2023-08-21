@@ -1,7 +1,39 @@
-<h1>Signup</h1>
-<%= form_with model: @user do |form| %>
-  <div>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <%= stylesheet_link_tag "style" %> 
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <span class="company">JOT</span>
+        <span>Sign uo</span>
+      </div>
+      <div class="col-8">
+        <span><a href="/jobs">Jobs</a></span>
+        <span><a href="/login">Log in</a></span>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <div class="container">
+  <h1>Sign up</h1>
+  <br>
+  <%= form_with model: @user do |form| %>
+   <div>
     <%= form.label :name %>
+    <br>
     <%= form.text_field :name %>
     <% @user.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
@@ -9,6 +41,7 @@
   </div>
   <div>
     <%= form.label :email %>
+    <br>
     <%= form.email_field :email %>
     <% @user.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
@@ -16,6 +49,7 @@
   </div>
   <div>
     <%= form.label :password %>
+    <br>
     <%= form.password_field :password %>
     <% @user.errors.full_messages_for(:password).each do |message| %>
       <div><%= message %></div>
@@ -23,12 +57,14 @@
   </div>
   <div>
     <%= form.label :password_confirmation %>
+    <br>
     <%= form.password_field :password_confirmation %>
     <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
   <div>
+    <br>
     <%= form.submit %>
   </div>
 <% end %>
